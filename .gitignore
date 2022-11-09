@@ -1,2 +1,4 @@
 
 replay_buffer
+.gitignore
+.gitattributes
