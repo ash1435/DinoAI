@@ -1,0 +1,10 @@
+torch
+gym
+mss
+pydirectinput
+selenium
+numpy
+opencv-python
+pytesseract
+pillow
+chromedriver_binary
