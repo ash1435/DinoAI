@@ -5,6 +5,6 @@ pydirectinput
 selenium
 numpy
 opencv-python
-pytesseract
-pillow
+easyocr
 chromedriver_binary
+pillow
