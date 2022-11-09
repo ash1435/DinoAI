@@ -2,14 +2,14 @@
 
 An AI built to run the ever popular Dino game from Chrome. A simple AI constructed using DQNs and implemented using pytorch.
 
-## Install dependencies
+### Install dependencies
 
 Python >=3.10 is required.
 
 ```bash
 pip3 install -r requirements.txt
 ```
-## Run AI
+### Run AI
 
 ```bash
 python3 main.py [number_of_episodes]
