@@ -1,6 +1,6 @@
 # DinoAI
 
-An AI built to run the ever popular Dino game from Chrome. A simple AI constructed using DQNs implemented using pytorch.
+An AI built to run the ever popular Dino game from Chrome. A simple AI constructed using DQNs and implemented using pytorch.
 
 #Install dependencies
 
