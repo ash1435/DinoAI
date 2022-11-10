@@ -10,8 +10,11 @@ from selenium.webdriver.common.keys import Keys
 import chromedriver_binary
 
 env = WebGame()
-model = T.load('best_model/target.pth')
-epochs = int(sys.argv[1])
+model = T.load('best_model/target.pth', map_location='cpu')
+try:
+        epochs = int(sys.argv[1])
+except:
+        epochs = 1
 episode = 0
 driver = webdriver.Chrome(executable_path='./chromedriver.exe')
 driver.maximize_window()
@@ -30,5 +33,3 @@ while episode<epochs:
     if done:
         obs = env.reset()
         episode+=1
-
-

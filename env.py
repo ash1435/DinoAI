@@ -9,21 +9,21 @@ from gym.spaces import Box, Discrete
 from PIL import Image
 import torch as T
 
-gpu = True if T.cuda.is_available() else False
+gpu = True 
 
-def easyocr_read(file: str, reader):
+# def easyocr_read(file: str, reader):
 
-    results = reader.readtext(file)
-    results = sorted(results, key=lambda x: x[0][0])
-    text_results = [x[-2] for x in results]
-    easy_output = " ".join(text_results)  
-    easy_output = easy_output.strip() 
-    return easy_output
+#     results = reader.readtext(file)
+#     results = sorted(results, key=lambda x: x[0][0])
+#     text_results = [x[-2] for x in results]
+#     easy_output = " ".join(text_results)  
+#     easy_output = easy_output.strip() 
+#     return easy_output
 
-if gpu:
-    reader = easyocr.Reader(['en'], gpu = True)
-else:
-    reader = easyocr.Reader(['en'], gpu = False)    
+# if gpu:
+#     reader = easyocr.Reader(['en'], gpu = True)
+# else:
+#     reader = easyocr.Reader(['en'], gpu = False)    
 
 class WebGame(Env):
     def __init__(self):
@@ -47,7 +47,7 @@ class WebGame(Env):
         reward = 1
         info = {}
         if action!=1:
-            time.sleep(0.1) 
+            time.sleep(0.2) 
 
         return observation, reward, done, info 
 
@@ -73,9 +73,9 @@ class WebGame(Env):
         done_strings = ['G A M E', 'G A H E', '6 A M E', '6AME', '6 A M E']
 
         done = False
-        Image.fromarray(done_i).save('001.png')
-        res = easyocr_read('001.png', reader)[:7]
-        if res in done_strings:
-            done = True
+        # Image.fromarray(done_i).save('001.png')
+        # res = easyocr_read('001.png', reader)[:7]
+        # if res in done_strings:
+        #     done = True
 
         return done
