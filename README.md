@@ -1,6 +1,7 @@
 # DinoAI
 
 An AI built to run the ever popular Dino game from Chrome. A simple AI constructed using DQNs and implemented using pytorch.
+Keep in mind it is compuationally intensive and may crash your system if run for long periods.
 
 ## Tesseract installer for Windows
 
