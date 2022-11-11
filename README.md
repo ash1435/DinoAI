@@ -8,7 +8,7 @@ Pytorch is not supported on Python 3.11 hence I recommend using a virtual env.
 
 Install miniconda from https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe.
 
-Open up the anaconda terminal and run the following commands:
+Open up the anaconda terminal from the start menu and run the following commands:
 
 ```bash
 conda create -n [name_of_your_venv] pip
