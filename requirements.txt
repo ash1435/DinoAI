@@ -6,4 +6,5 @@ selenium
 numpy
 opencv-python==4.5.5.64
 chromedriver_binary
+pytesseract
 pillow

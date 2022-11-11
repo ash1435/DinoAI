@@ -4,26 +4,12 @@ import cv2 as cv
 import numpy as np
 import time
 from gym import Env
-import easyocr
+import pytesseract
 from gym.spaces import Box, Discrete
 from PIL import Image
 import torch as T
 
-gpu = True 
-
-# def easyocr_read(file: str, reader):
-
-#     results = reader.readtext(file)
-#     results = sorted(results, key=lambda x: x[0][0])
-#     text_results = [x[-2] for x in results]
-#     easy_output = " ".join(text_results)  
-#     easy_output = easy_output.strip() 
-#     return easy_output
-
-# if gpu:
-#     reader = easyocr.Reader(['en'], gpu = True)
-# else:
-#     reader = easyocr.Reader(['en'], gpu = False)    
+pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
 
 class WebGame(Env):
     def __init__(self):
@@ -70,12 +56,12 @@ class WebGame(Env):
         done_i = np.array(self.cap.grab(self.done_location))[:,:,:3]
 
 
-        done_strings = ['G A M E', 'G A H E', '6 A M E', '6AME', '6 A M E']
+        done_strings = ['GAME', 'GAHE']
 
         done = False
-        # Image.fromarray(done_i).save('001.png')
-        # res = easyocr_read('001.png', reader)[:7]
-        # if res in done_strings:
-        #     done = True
-
+         
+        res = pytesseract.image_to_string(done_i)[:4]
+        if res in done_strings:
+            done = True
+  
         return done

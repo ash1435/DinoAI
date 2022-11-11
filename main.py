@@ -10,26 +10,31 @@ from selenium.webdriver.common.keys import Keys
 import chromedriver_binary
 
 env = WebGame()
-model = T.load('best_model/target.pth', map_location='cpu')
+
+model = T.load('best_model/target.pth') if T.cuda.is_available() else T.load('best_model/target.pth', map_location='cpu')
+
 try:
         epochs = int(sys.argv[1])
 except:
         epochs = 1
 episode = 0
+
 driver = webdriver.Chrome(executable_path='./chromedriver.exe')
 driver.maximize_window()
 try: 
     driver.get('chrome://dino')
-except:   
+except:
+    
     pass
+
 
 obs = env.reset()
 time.sleep(2)
-while episode<epochs:
+while episode<epochs:      
     action = model.act(obs)
 
     new_obs, rew, done, _ = env.step(action)
     obs = new_obs
     if done:
         obs = env.reset()
-        episode+=1
+        episode+=1   
