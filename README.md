@@ -10,11 +10,10 @@ WARNING: Tesseract should be either installed in the directory which is suggeste
 
 The latest installers can be downloaded here:
 
-[tesseract-ocr-w32-setup-v5.2.0.20220712.exe](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w32-setup-v5.2.0.20220712.exe) (32 bit) and
-[tesseract-ocr-w64-setup-v5.2.0.20220712.exe](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.2.0.20220712.exe) (64 bit) resp.
+* [tesseract-ocr-w32-setup-v5.2.0.20220712.exe](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w32-setup-v5.2.0.20220712.exe) (32 bit) 
+* [tesseract-ocr-w64-setup-v5.2.0.20220712.exe](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.2.0.20220712.exe) (64 bit) resp.
 
-
-### Install dependencies
+## Install dependencies
 
 Pytorch is not supported on Python 3.11 hence I recommend using a virtual env.
 
@@ -33,7 +32,7 @@ Navigate to the DinoAI folder and execute the rest
 ```bash
 pip install -r requirements.txt
 ```
-### Run AI
+## Run AI
 
 ```bash
 python main.py [number_of_episodes]
