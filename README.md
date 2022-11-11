@@ -4,14 +4,26 @@ An AI built to run the ever popular Dino game from Chrome. A simple AI construct
 
 ### Install dependencies
 
-Python >=3.10 is required.
+Pytorch is not supported on Python 3.11 hence I recommend using a virtual env.
+
+Install miniconda from https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe.
+
+Open up the anaconda terminal and run the following commands:
 
 ```bash
-pip3 install -r requirements.txt
+conda create -n [name_of_your_venv] pip
+```
+```bash
+conda activate [name_of_your_venv]
+```
+Navigate to the DinoAI folder and execute the rest
+
+```bash
+pip install -r requirements.txt
 ```
 ### Run AI
 
 ```bash
-python3 main.py [number_of_episodes]
+python main.py [number_of_episodes]
 ```
 The dafault number of episodes is 1.
