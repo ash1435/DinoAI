@@ -23,8 +23,7 @@ driver = webdriver.Chrome(executable_path='./chromedriver.exe')
 driver.maximize_window()
 try: 
     driver.get('chrome://dino')
-except:
-    
+except: 
     pass
 
 
