@@ -3,6 +3,8 @@
 An AI built to run the ever popular Dino game from Chrome. A simple AI constructed using DQNs and implemented using pytorch.
 Keep in mind it is compuationally intensive and may crash your system if run for long periods.
 
+NOTE: It is not perfect and will not work as you expect it to.
+
 ## Tesseract installer for Windows
 
 Normally we run Tesseract on Debian GNU Linux, but there was also the need for a Windows version. That's why we have built a Tesseract installer for Windows.
